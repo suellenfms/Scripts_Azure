@@ -1,4 +1,6 @@
-### It is necessary to connect to Azure subscription first and get the "ResourceID" from the resource you want to add the Tags
+### It is necessary to connect to Azure subscription using "Connect-AzAccount" ###
+### It is also necessary to get the "ResourceID" from the resource you want to add the Tags ###
+
 
 $tags = @{"CONTRACT"="collocation"; "DEPARTMENT"="IT"; "ENVIRONMENT"="PRD";"RISK"="MEDIUM";"PROJECT"="WEB-PAGE1"}
 Set-AzResource -ResourceID "/subscriptions/xxxxxxxxx/xxxxxxxxx" -Tags $tags
