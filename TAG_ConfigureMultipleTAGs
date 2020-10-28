@@ -1,5 +1,11 @@
-### It is necessary to connect to Azure subscription using "Connect-AzAccount" ###
-### It is also necessary to get the "ResourceID" from the resource you want to add the Tags ###
+#----------------------------------------------------------
+# Script Azure >> Configurar Multiplas TAGs em um Recurso / Configure Multiple TAGs in a Resource
+# By: Suellen Ferreira
+#----------------------------------------------------------
+# It is necessary to connect to Azure subscription using "Connect-AzAccount"
+# It is also necessary to get the "ResourceID" from the resource you want to add the Tags
+# Resources/Modules: AzResource
+#----------------------------------------------------------
 
 
 $tags = @{"CONTRACT"="collocation"; "DEPARTMENT"="IT"; "ENVIRONMENT"="PRD";"RISK"="MEDIUM";"PROJECT"="WEB-PAGE1"}
