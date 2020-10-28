@@ -1,0 +1,23 @@
+### Firtsly you need to connect to your Azure Subscription using "Connect-AzAccount" ###
+
+
+$NoTagObj  = @()
+$NotWanted = ("Microsoft.OperationsManagement/solutions", "Microsoft.Compute/virtualMachines/extensions", "Microsoft.Network/networkInterfaces","Microsoft.Network/routeTables","Microsoft.Compute/restorePointCollections","Microsoft.SqlVirtualMachine/SqlVirtualMachines")
+$resources = Get-AzureRmResource 
+#| where {$_.ResourceType -like "*stora*"}
+
+foreach($resource in $resources)
+{    
+    if ($resource.Tags.count -eq 0)
+    {
+        if (-not($NotWanted -contains $resource.ResourceType))
+        {
+            $object = New-Object -TypeName PSObject
+            $object | Add-Member -Name "Nome" -type noteproperty  -Value $resource.Name
+            $object | Add-Member -Name "Tipo" -type noteproperty  -Value $resource.ResourceType
+            $NoTagObj += $object
+        }
+    }
+}
+
+$NoTagObj | export-csv -Path .\NoTags.csv 
