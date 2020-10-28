@@ -1,4 +1,11 @@
-### Firtsly you need to connect to your Azure Subscription using "Connect-AzAccount" ###
+#----------------------------------------------------------
+# Script Azure >> Listar recursos sem Tag / List untagged resources
+# By: Suellen Ferreira
+#----------------------------------------------------------
+# It is necessary to connect to Azure subscription using "Connect-AzureRmAccount"
+# Resources/Modules: AzureRmResource     (This module will be deprecated and you can replace it to "Az" Module)
+# Removed Resourcers: Microsoft.OperationsManagement/solutions", "Microsoft.Compute/virtualMachines/extensions", "Microsoft.Network/networkInterfaces","Microsoft.Network/routeTables","Microsoft.Compute/restorePointCollections","Microsoft.SqlVirtualMachine/SqlVirtualMachines
+#----------------------------------------------------------
 
 
 $NoTagObj  = @()
